@@ -1,11 +1,12 @@
-﻿/*!
- * Bootstrap-select v1.13.1 (https://developer.snapappointments.com/bootstrap-select)
+/*!
+ * Bootstrap-select v1.13.12 (https://developer.snapappointments.com/bootstrap-select)
  *
- * Copyright 2012-2018 SnapAppointments, LLC
+ * Copyright 2012-2019 SnapAppointments, LLC
  * Licensed under MIT (https://github.com/snapappointments/bootstrap-select/blob/master/LICENSE)
  */
 
 (function (root, factory) {
+  if (root === undefined && window !== undefined) root = window;
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module unless amdModuleId is set
     define(["jquery"], function (a0) {
@@ -23,15 +24,23 @@
 
 (function ($) {
   $.fn.selectpicker.defaults = {
-    noneSelectedText: 'No hay selección',
-    noneResultsText: 'No hay resultados {0}',
-    countSelectedText: 'Seleccionados {0} de {1}',
-    maxOptionsText: ['Límite alcanzado ({n} {var} max)', 'Límite del grupo alcanzado({n} {var} max)', ['elementos', 'element']],
-    multipleSeparator: ', ',
-    selectAllText: 'Seleccionar Todos',
-    deselectAllText: 'Desmarcar Todos'
+    noneSelectedText: 'Bitte wählen...',
+    noneResultsText: 'Keine Ergebnisse für {0}',
+    countSelectedText: function (numSelected, numTotal) {
+      return (numSelected == 1) ? '{0} Element ausgewählt' : '{0} Elemente ausgewählt';
+    },
+    maxOptionsText: function (numAll, numGroup) {
+      return [
+        (numAll == 1) ? 'Limit erreicht ({n} Element max.)' : 'Limit erreicht ({n} Elemente max.)',
+        (numGroup == 1) ? 'Gruppen-Limit erreicht ({n} Element max.)' : 'Gruppen-Limit erreicht ({n} Elemente max.)'
+      ];
+    },
+    selectAllText: 'Alles auswählen',
+    deselectAllText: 'Nichts auswählen',
+    multipleSeparator: ', '
   };
 })(jQuery);
 
 
 }));
+//# sourceMappingURL=defaults-de_DE.js.map

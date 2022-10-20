@@ -1,11 +1,12 @@
-﻿/*!
- * Bootstrap-select v1.13.1 (https://developer.snapappointments.com/bootstrap-select)
+/*!
+ * Bootstrap-select v1.13.12 (https://developer.snapappointments.com/bootstrap-select)
  *
- * Copyright 2012-2018 SnapAppointments, LLC
+ * Copyright 2012-2019 SnapAppointments, LLC
  * Licensed under MIT (https://github.com/snapappointments/bootstrap-select/blob/master/LICENSE)
  */
 
 (function (root, factory) {
+  if (root === undefined && window !== undefined) root = window;
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module unless amdModuleId is set
     define(["jquery"], function (a0) {
@@ -21,17 +22,30 @@
   }
 }(this, function (jQuery) {
 
+/*!
+ * Translated default messages for bootstrap-select.
+ * Locale: AR (Arabic)
+ * Author: Yasser Lotfy <y_l@alive.com>
+ */
 (function ($) {
   $.fn.selectpicker.defaults = {
-    noneSelectedText: 'No hay selección',
-    noneResultsText: 'No hay resultados {0}',
-    countSelectedText: 'Seleccionados {0} de {1}',
-    maxOptionsText: ['Límite alcanzado ({n} {var} max)', 'Límite del grupo alcanzado({n} {var} max)', ['elementos', 'element']],
-    multipleSeparator: ', ',
-    selectAllText: 'Seleccionar Todos',
-    deselectAllText: 'Desmarcar Todos'
+    noneSelectedText: 'لم يتم إختيار شئ',
+    noneResultsText: 'لا توجد نتائج مطابقة لـ {0}',
+    countSelectedText: function (numSelected, numTotal) {
+      return (numSelected == 1) ? '{0} خيار تم إختياره' : '{0} خيارات تمت إختيارها';
+    },
+    maxOptionsText: function (numAll, numGroup) {
+      return [
+        (numAll == 1) ? 'تخطى الحد المسموح ({n} خيار بحد أقصى)' : 'تخطى الحد المسموح ({n} خيارات بحد أقصى)',
+        (numGroup == 1) ? 'تخطى الحد المسموح للمجموعة ({n} خيار بحد أقصى)' : 'تخطى الحد المسموح للمجموعة ({n} خيارات بحد أقصى)'
+      ];
+    },
+    selectAllText: 'إختيار الجميع',
+    deselectAllText: 'إلغاء إختيار الجميع',
+    multipleSeparator: '، '
   };
 })(jQuery);
 
 
 }));
+//# sourceMappingURL=defaults-ar_AR.js.map
