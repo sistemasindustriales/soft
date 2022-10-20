@@ -66,6 +66,10 @@ function initMap() {
         }
     ];
 
+    var latitude = $('#google-maps-api-js').attr('latitude');
+    var longitude = $('#google-maps-api-js').attr('longitude');
+    var mapMarkerTitle = $('#google-maps-api-js').attr('mapMarkerTitle');
+
     if (latitude == '' || longitude == '') {
         return;
     } else if (isNaN(latitude) || isNaN(longitude)) {
